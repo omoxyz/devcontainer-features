@@ -12,6 +12,8 @@ jobs:
       packages: write
     steps:
       - uses: actions/checkout@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
 
       - name: "Publish Features"
         uses: devcontainers/action@v1
