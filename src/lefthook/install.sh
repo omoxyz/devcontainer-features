@@ -3,7 +3,7 @@
 source ./utils.sh
 
 LEFTHOOK_VERSION=${VERSION:-"latest"}
-INSTALL_DIRECTLY_FROM_GITHUB_RELEASE=${INSTALLDIRECTLYFROMGITHUBRELEASE:-"false"}
+INSTALL_DIRECTLY_FROM_GITHUB_RELEASE=${INSTALLDIRECTLYFROMGITHUBRELEASE:-"true"}
 GITHUB_REPO=https://github.com/evilmartians/lefthook
 
 # Exit immediately if a command exits with a non-zero status.
@@ -80,14 +80,16 @@ install_from_package_manager() {
     apt-get install -y --no-install-recommends lefthook=${latest_version}
 }
 
-# Install curl, ca-certificates, git if missing
+# Install curl if missing
 check_packages curl ca-certificates
-if ! type git > /dev/null 2>&1; then
-    check_packages git
-fi
 
 # Install Lefthook
 if [ "${INSTALL_DIRECTLY_FROM_GITHUB_RELEASE}" = "true" ]; then
+    # Install git if missing
+    if ! type git > /dev/null 2>&1; then
+        check_packages git
+    fi
+
     install_from_github
 else
     install_from_package_manager

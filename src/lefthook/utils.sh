@@ -10,7 +10,8 @@ apt_get_update() {
 check_packages() {
     if ! dpkg -s "$@" > /dev/null 2>&1; then
         apt_get_update
-        apt-get -y --no-install-recommends "$@"
+        echo "Installing $@..."
+        apt-get install -y --no-install-recommends $@
     fi
 }
 
