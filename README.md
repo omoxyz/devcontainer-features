@@ -1,6 +1,6 @@
-# Devcontainers Features
+# Omoxyz Dev Container Features
 
-Custom features for devcontainers used in development of Omoxyz software projects using Visual Studio Code. It ensures all developers have consistent tools and configurations.
+Custom features for dev containers used in development of Omoxyz software projects using Visual Studio Code. It ensures all developers have consistent tools and configurations.
 
 ## Features
 
