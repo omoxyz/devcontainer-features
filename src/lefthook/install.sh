@@ -1,4 +1,4 @@
-#! /usr/bin/bash
+#!/usr/bin/env bash
 
 source ./utils.sh
 
@@ -30,14 +30,14 @@ get_github_filename() {
 install_from_github() {
     local version_list=$(git ls-remote --tags ${GITHUB_REPO})
     
-    versions=($(find_latest_version $LEFTHOOK_VERSION version_list "tags/v"))
-    latest_version=${versions[0]}
-    prev_version=${versions[1]}
-
+    versions=($(find_latest_versions $LEFTHOOK_VERSION version_list "tags/v"))
     if [ $? -eq 1 ]; then
         echo "Can't find appropriate version"
         exit 1
     fi
+
+    latest_version=${versions[0]}
+    prev_version=${versions[1]}
 
     echo "Downloading lefthook v${latest_version}...."
 
@@ -68,7 +68,7 @@ install_from_package_manager() {
     curl -1sLf 'https://dl.cloudsmith.io/public/evilmartians/lefthook/setup.deb.sh' | bash
     
     local version_list=$(get_apt_versions lefthook)
-    versions=($(find_latest_version $LEFTHOOK_VERSION version_list))
+    versions=($(find_latest_versions $LEFTHOOK_VERSION version_list))
     latest_version=${versions[0]}
 
     if [ $? -eq 1 ]; then
