@@ -1,0 +1,65 @@
+{
+    "configurations": [
+        {
+            "name": "Test All Features",
+            "type": "node",
+            "program": "/usr/local/share/npm-global/bin/devcontainer",
+            "args": [
+                "features",
+                "test",
+                ".",
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "autoAttachChildProcesses": false,
+            "request": "launch",
+        },
+        {
+            "name": "Test Features (input)",
+            "type": "node",
+            "program": "/usr/local/share/npm-global/bin/devcontainer",
+            "args": [
+                "features",
+                "test",
+                "--skip-scenarios",
+                "-f",
+                "${input:selectedFeatures}",
+                "-i",
+                "${input:selectedBaseImage}",
+                "."
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "autoAttachChildProcesses": false,
+            "request": "launch",
+        },
+        {
+            "name": "Test Global",
+            "type": "node",
+            "program": "/usr/local/share/npm-global/bin/devcontainer",
+            "args": [
+                "features",
+                "test",
+                "--global-scenarios-only",
+                "."
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "autoAttachChildProcesses": false,
+            "request": "launch"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "selectedFeatures",
+            "type": "promptString",
+            "description": "Space separated list of features to test",
+        },
+        {
+            "id": "selectedBaseImage",
+            "type": "promptString",
+            "description": "Base Image",
+            "default": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu"
+        }
+    ]
+}
