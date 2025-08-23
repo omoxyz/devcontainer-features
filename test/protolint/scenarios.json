@@ -2,7 +2,7 @@
     "test": {
         "image": "mcr.microsoft.com/devcontainers/base:debian",
         "features": {
-            "protoc": {}
+            "protolint": {}
         }
     }
 }
