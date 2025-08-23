@@ -21,7 +21,6 @@
             "args": [
                 "features",
                 "test",
-                "--skip-scenarios",
                 "-f",
                 "${input:selectedFeatures}",
                 "-i",
@@ -59,7 +58,7 @@
             "id": "selectedBaseImage",
             "type": "promptString",
             "description": "Base Image",
-            "default": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu"
+            "default": "mcr.microsoft.com/vscode/devcontainers/base:debian"
         }
     ]
 }
