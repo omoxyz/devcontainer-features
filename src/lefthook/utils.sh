@@ -10,11 +10,25 @@ apt_get_update() {
 
 # Checks if packages are installed and installs them if not
 check_packages() {
-    if ! dpkg -s "$@" > /dev/null 2>&1; then
+    for pkg in "$@"; do
+        # Check if it's a command in PATH
+        if command -v "$pkg" &> /dev/null; then
+            echo "[OK] $pkg found in PATH"
+            continue
+        fi
+
+        # Check if it's a Debian/Ubuntu package installed
+        if dpkg -s "$pkg" &> /dev/null; then
+            echo "[OK] $pkg package installed"
+            continue
+        fi
+
+        # If not found, install package
+        echo "$pkg not found. Installing..."
         apt_get_update
-        echo "Installing $@..."
-        apt-get install -y --no-install-recommends $@
-    fi
+        apt-get install -y --no-install-recommends $pkg
+
+    done
 }
 
 # Find 2 latest versions that appropriate to requested version
