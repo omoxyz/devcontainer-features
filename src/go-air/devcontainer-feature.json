@@ -1,7 +1,7 @@
 {
     "name": "Air",
     "id": "go-air",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "documentationURL": "http://github.com/omoxyz/devcontainer-features/tree/main/src/go-air",
     "description": "Install Air live reloader for Go apps.",
     "options": {
@@ -12,9 +12,15 @@
                 "latest"
             ],
             "type": "string"
+        },
+        "installDirectlyFromGitHubRelease": {
+            "type": "boolean",
+            "description": "Install directly from Github release or from package manager (apt).",
+            "default": true
         }
     },
-    "dependsOn": {
-        "ghcr.io/devcontainers/features/go": {}
-    }
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/git",
+        "ghcr.io/devcontainers/features/go"
+    ]
 }
