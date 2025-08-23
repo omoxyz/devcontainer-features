@@ -16,6 +16,7 @@ Install Air live reloader for Go apps.
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
 | version | Select the version to install. | string | latest |
+| installDirectlyFromGitHubRelease | Install directly from Github release or from package manager (apt). | boolean | true |
 
 ## OS Support
 
