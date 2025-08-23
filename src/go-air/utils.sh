@@ -1,5 +1,22 @@
 #!/usr/bin/env bash
 
+# Refresh the local package index if no package list entries are stored on the system.
+apt_get_update() {
+    if [ "$(find /var/lib/apt/lists/* | wc -l)" = "0" ]; then
+        echo "Running apt-get update..."
+        apt-get update -y
+    fi
+}
+
+# Checks if packages are installed and installs them if not
+check_packages() {
+    if ! dpkg -s "$@" > /dev/null 2>&1; then
+        apt_get_update
+        echo "Installing $@..."
+        apt-get install -y --no-install-recommends $@
+    fi
+}
+
 # Find 2 latest versions that appropriate to requested version
 find_latest_versions() {
     local requested_version=$1
