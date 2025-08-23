@@ -4,8 +4,9 @@ Custom features for dev containers used in development of Omoxyz software projec
 
 ## Features
 
-- **Lefthook** (`lefthook`) – fast polyglot Git hooks manager to automate code checks, formatting, and tests before commits and pushes.
-- **Air** (`go-air`) - live reloader for Go apps
+- **Lefthook** ([lefthook](./src/lefthook/README.md)) – fast polyglot Git hooks manager to automate code checks, formatting, and tests before commits and pushes.
+- **Air** ([go-air](./src/go-air/README.md)) - live reloader for Go apps
+- **Protoc** ([protoc](./src/protoc/README.md))
 
 ## Usage
 
