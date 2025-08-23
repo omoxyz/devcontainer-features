@@ -1,7 +1,7 @@
 {
     "name": "Lefthook",
     "id": "lefthook",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "documentationURL": "http://github.com/omoxyz/devcontainer-features/tree/main/src/lefthook",
     "description": "Install Lefthook fast polyglot Git hooks manager.",
     "options": {

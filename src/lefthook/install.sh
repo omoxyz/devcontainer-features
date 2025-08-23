@@ -37,7 +37,7 @@ install_from_github() {
     fi
 
     latest_version=${versions[0]}
-    prev_version=${versions[1]}
+    prev_version=${versions[1]:-$latest_version}
 
 
     echo "Downloading lefthook v${latest_version}...."
@@ -90,9 +90,7 @@ check_packages curl ca-certificates
 # Install Lefthook
 if [ "${INSTALL_DIRECTLY_FROM_GITHUB_RELEASE}" = "true" ]; then
     # Install git if missing
-    if ! type git > /dev/null 2>&1; then
-        check_packages git
-    fi
+    check_packages git
 
     install_from_github
 else
