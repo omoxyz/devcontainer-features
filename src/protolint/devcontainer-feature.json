@@ -1,0 +1,20 @@
+{
+    "name": "Protolint",
+    "id": "protolint",
+    "version": "1.0.0",
+    "documentationURL": "http://github.com/omoxyz/devcontainer-features/tree/main/src/protolint",
+    "description": "Install Protolint linter and fixer to enforce Protocol Buffer style and conventions.",
+    "options": {
+        "version": {
+            "default": "latest",
+            "description": "Select the version to install.",
+            "proposals": [
+                "latest"
+            ],
+            "type": "string"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/git"
+    ]
+}
