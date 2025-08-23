@@ -37,7 +37,7 @@ install_from_github() {
     fi
 
     latest_version=${versions[0]}
-    prev_version=${versions[1]}
+    prev_version=${versions[1]:-$latest_version}
 
     echo "Downloading protolint v${latest_version}...."
 
