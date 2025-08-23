@@ -76,13 +76,8 @@ install_from_github() {
     rm -rf /tmp/air
 }
 
-# Install curl if missing
-check_packages curl ca-certificates
-
-# Install git if missing
-if ! type git > /dev/null 2>&1; then
-    check_packages git
-fi
+# Install curl, git if missing
+check_packages curl ca-certificates git
 
 version_list=$(git ls-remote --tags ${GITHUB_REPO})
 
