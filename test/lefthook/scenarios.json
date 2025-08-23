@@ -1,5 +1,13 @@
 {
-    "test": {
+    "install_using_apt": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "lefthook": {
+                "installDirectlyFromGitHubRelease": "false"
+            }
+        }
+    },
+    "install_from_github": {
         "image": "mcr.microsoft.com/devcontainers/base:debian",
         "features": {
             "lefthook": {}

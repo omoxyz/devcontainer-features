@@ -1,5 +1,14 @@
 {
-    "test": {
+    "install_using_go": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "ghcr.io/devcontainers/features/go:1": {},
+            "go-air": {
+                "installDirectlyFromGitHubRelease": "false"
+            }
+        }
+    },
+    "install_from_github": {
         "image": "mcr.microsoft.com/devcontainers/base:debian",
         "features": {
             "go-air": {}
