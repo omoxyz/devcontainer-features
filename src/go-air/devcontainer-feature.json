@@ -1,7 +1,7 @@
 {
     "name": "Air",
     "id": "go-air",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "documentationURL": "http://github.com/omoxyz/devcontainer-features/tree/main/src/go-air",
     "description": "Install Air live reloader for Go apps.",
     "options": {
