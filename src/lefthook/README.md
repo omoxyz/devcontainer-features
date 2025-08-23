@@ -16,7 +16,7 @@ Install Lefthook fast polyglot Git hooks manager.
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
 | version | Select the version to install. | string | latest |
-| installDirectlyFromGitHubRelease | - | boolean | true |
+| installDirectlyFromGitHubRelease | Install directly from Github release or from package manager (apt). | boolean | true |
 
 ## OS Support
 
